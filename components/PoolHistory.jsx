@@ -54,7 +54,7 @@ const PoolHistory = ({setActiveComponent}) => {
                             <GoCopy/>
                           </i>
                             <span className="text-default-50">
-                              Fee: {shortenAddress(pool.fee)}
+                              Fee: {pool.fee}
                             </span>
                         </li>
                       </ul>

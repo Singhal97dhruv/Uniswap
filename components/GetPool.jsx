@@ -7,6 +7,7 @@ const GetPool = ({ GET_POOL_ADDRESS }) => {
   const [poolAddress, setPoolAddress] = useState([]);
 
   //Notiifctaion
+  const notifySuccess=(msg)=>toast.success(msg,{duration: 2000})
   const notifyError = (msg) => toast.error(msg, { duration: 4000 });
 
   useEffect(() => {
@@ -36,6 +37,7 @@ const GetPool = ({ GET_POOL_ADDRESS }) => {
     const poolAddress = await GET_POOL_ADDRESS(liquidity, selectedNetwork);
     console.log(poolAddress)
     setPoolAddress(poolAddress);
+    notifySuccess("Pool address added")
 
   }
 

@@ -15,6 +15,7 @@ const Home = ({setActiveComponent,GET_POOL_DETAILS}) => {
 
   //Notification
   const notifyError=(msg)=>toast.error(msg,{duration:4000});
+  const notifySuccess=(msg)=>toast.success(msg,{duration: 2000})
 
   useEffect(()=>{
     const network=JSON.parse(localStorage.getItem("activeNetwork"));
@@ -33,6 +34,8 @@ const Home = ({setActiveComponent,GET_POOL_DETAILS}) => {
     const poolDetails= await GET_POOL_DETAILS(inputAddress,selectedNetwork);
     setPoolDetails(poolDetails);
 
+    notifySuccess("Liquidity fetched");
+    setActiveComponent("Liquidity History")
   }
 
   return <section className="relative overflow-hidden pt-[72px] bg-default-950/40 backdrop-blur-3xl">
